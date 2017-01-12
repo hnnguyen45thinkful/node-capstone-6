@@ -31,7 +31,7 @@
       <li id="payPeriod">
         <label>Fee Period</label>
         <select class="payPeriodSelect field-select" name="pay_period">
-          <option value="Monthly" <%= (expense.pay_period && expense.pay_period=='Month') ? 'selected' : '' %>>Monthly</option>
+          <option value="Monthly" <%= (expense.pay_period && expense.pay_period=='Monthly') ? 'selected' : '' %>>Monthly</option>
           <option value="Yearly" <%= (expense.pay_period && expense.pay_period=='Yearly') ? 'selected' : '' %>>Yearly</option>
           <option value="Weekly" <%= (expense.pay_period && expense.pay_period=='Weekly') ? 'selected' : '' %>>Weekly</option>
         </select>

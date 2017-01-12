@@ -25,24 +25,24 @@
       </li>
       <li>
         <label>Company Title <span class="required">*</span></label>
-        <input class="field-long" type="text" name="company_title" placeholder="Software Engineer"/>
+        <input class="field-long" type="text" name="company_title" placeholder="Software Engineer" value="<%= (income.company_title) ? income.company_title : '' %>"/>
       </li>
       <li id="payPeriod">
         <label>Pay Period</label>
         <select class="payPeriodSelect field-select" name="pay_period">
-          <option value="Yearly">Yearly</option>
-          <option value="Monthly">Monthly</option>
-          <option value="Weekly">Weekly</option>
-          <option value="Hourly">Hourly</option>
+          <option value="Yearly"<%= (income.pay_period && income.pay_period=='Yearly') ? 'selected' : '' %>>Yearly</option>
+          <option value="Monthly"<%= (income.pay_period && income.pay_period=='Monthly') ? 'selected' : '' %>>Monthly</option>
+          <option value="Weekly"<%= (income.pay_period && income.pay_period=='Weekly') ? 'selected' : '' %>>Weekly</option>
+          <option value="Hourly"<%= (income.pay_period && income.pay_period=='Hourly') ? 'selected' : '' %>>Hourly</option>
         </select>
       </li>
       <li>
         <label>Hours Worked<span class="required">*</span></label>
-        <input class="field-long" type="text" name="hours_work" placeholder="40 (e.g. hours a week)"/>
+        <input class="field-long" type="text" name="hours_work" placeholder="40 (e.g. hours a week)" value="<%= (income.hours_work) ? income.hours_work : '' %>"/>
       </li> 
       <li>
         <label> <span class="salaryTerm">Yearly  </span>Salary<span class="required">*</span></label>
-        <input class="salary field-short" id="field5" type="text" name="yearly" placeholder="40000"/>
+        <input class="salary field-short" id="field5" type="text" name="yearly" placeholder="40000" value="<%= (income.yearly) ? income.yearly : '' %>"/>
       </li>
       <li>
         <input type="submit" value="Submit"/>
