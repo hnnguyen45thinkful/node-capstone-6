@@ -77,8 +77,8 @@
               <td><%=incomes[i].hours_work%></td>
               <td><%=incomes[i].pay_period%></td>
               <td><%=incomes[i].yearly%></td>
-              <td><a href ="#" class="deleteIncomeLink">DELETE</a>
-              <td><a href ="#" class="updateIncomeLink">EDIT/UPDATE</a>
+              <td><a href ="#" data-id="<%=incomes[i]._id%>" class="deleteIncomeLink">DELETE</a>
+              <td><a href="/incomes/<%=incomes[i]._id%>" class="updateIncomeLink">EDIT/UPDATE</a>
             </tr>
           <% } %>
         </tbody>

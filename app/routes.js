@@ -127,18 +127,18 @@ app.post('/expenses/addexpense', function(req,res){
 //     });
 // });
 
-app.get('/incomelist', function(req, res){
-    Incomes.find({},{},function(e,docs){
-        res.json(docs);
-    });
-});
+// app.get('/incomelist', function(req, res){
+//     Incomes.find({},{},function(e,docs){
+//         res.json(docs);
+//     });
+// });
 
-//EXPENSES
-app.get('/expenselist', function(req, res){
-    Expense.find({},{},function(e,docs){
-        res.json(docs);
-    });
-});
+// //EXPENSES
+// app.get('/expenselist', function(req, res){
+//     Expense.find({},{},function(e,docs){
+//         res.json(docs);
+//     });
+// });
 
 
 

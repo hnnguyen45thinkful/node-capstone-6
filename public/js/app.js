@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
-	$('.deleteExpenseLink').click(function(e){
-		e.preventDefault();
+	$('.deleteExpenseLink').click(function(event){
+		event.preventDefault();
 		var expense = $(this).attr('data-id');
 		var tr = $(this).parent().parent();
 		$.ajax({
@@ -15,5 +15,22 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	// $('.deleteIncomeLink').click(function(event){
+	// 	event.preventDefault();
+	// 	var income = $(this).attr('data-id');
+	// 	var tr = $(this).parent().parent();
+	// 	$.ajax({
+	// 		url: '/income',
+	// 		method: 'DELETE',
+	// 		data: {
+	// 			id: income
+	// 		},
+	// 		success: function(data){
+	// 			tr.remove();
+	// 		}
+	// 	});
+	// });
+
 
 });
