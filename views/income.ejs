@@ -1,7 +1,7 @@
 <% include includes/headers.ejs %>
 
 <div id="addIncomeContainer">
-<% if(expense.name_of_worker) { %>
+<% if(income.name_of_worker) { %>
   <form id="addIncomeForm" action="/incomes/editincome/<%=income._id%>" method="post">
 <% } else { %>
   <form id="addIncomeForm" action="/incomes/addincome" method="post">

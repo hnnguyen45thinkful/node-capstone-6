@@ -64,6 +64,31 @@ app.delete('/expense', function(req,res){
     });
 });
 
+
+app.get('/incomes/:id', isLoggedIn, function(req,res){
+    Income.findOne({_id:req.params.id}, function(err,income){
+        if(!err){
+            res.render('income.ejs',{user:req.user,income:income});
+        }
+    });
+});
+
+app.post('/incomes/editincome/:id', isLoggedIn, function(req,res){
+    Income.findOneAndUpdate({_id:req.params.id}, req.body, function(err,income){
+        if(!err){
+            res.redirect('/profile');
+        }
+    });
+});
+
+app.delete('/income', function(req,res){
+    Income.findOneAndRemove({_id:req.body.id}, function(err,item){
+        if(!err){
+            res.send({});
+        }
+    });
+});
+
 app.get('/profile', isLoggedIn, function(req, res) {
     var incomes;
     var expenses;
