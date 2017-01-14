@@ -1,3 +1,8 @@
+$('#expenseList table tbody')
+$('#incomeList table tbody')
+
+
+
 function populateIncomes(){
 
 	var totalIncomeYearlyAfterTax;
