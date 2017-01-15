@@ -1,31 +1,6 @@
-$('#expenseList table tbody')
-$('#incomeList table tbody')
 
-
-
-function populateIncomes(){
-
-	var totalIncomeYearlyAfterTax;
- 	var totalIncomeYearly = $('.totalIncomeYearly').append().val().html();
-	var taxRate = 0.30 * totalIncomeYearly;//30 percent
-	totalIncomeYearlyAfterTax = taxRate;
-	$('#incomeList table tfoot').html(totalIncomeYearly);
-	$('.totalIncomeYearlyAfterTax').append().val().html();
-};
-
-function populateExpenses(){
-
-    var expensesContent = '';
-    var totalFeeMonthly = 0;
-    var totalMonthlyCost = 0;
-    var totalFeeMonthly;  
-        $('#expenseList table tr').html(totalFeeMonthly);
-        $('#totalFeeMonthly').html(totalMonthlyCost);
-    };
 
 $(document).ready(function(){
-		populateIncomes()
-		populateExpenses()
 
 	$('.deleteExpenseLink').click(function(event){
 		event.preventDefault();
@@ -58,6 +33,36 @@ $(document).ready(function(){
 			}
 		});
 	});
+$(function (){
+	var total = 0;
+	$("#expenseList table td").each(function () {
+		total = total + parseInt($(this).val());
+	});
+	$("#totalFeeMonthly").html('$' + total)
+});
+
+	$("#submit").click(function(){
+		var tax = 0;
+		var income = $('#income').val();
+		if (income <= 100000) {tax = 0;}
+		if (income > 100000 && income <= 50000){}
+			tax = (income -100000)*10/100;
+	}
+		if(income > 50000 && income <= 100000){
+			tax = 25000 + ((income-500000)*20/100);
+		}
+		if(income > 100000){
+			tax = (25000 + 100000) + ((income -100000)*30/100);
+		}
+		$('#tax').val(tax);
+	});
+$(function (){
+	var tax = 0;
+	$("#expenseList table td").each(function () {
+		total = total + parseInt($(this).val());
+	});
+	$("#totalFeeMonthly").html('$' + total)
+});
 
 
 });
