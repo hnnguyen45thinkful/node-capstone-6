@@ -2,7 +2,7 @@
 function colSum() {
     var sum = 0;
     //iterate through each input and add to sum
-    $('.salary field-short').each(function() {     
+    $('.payPeriodValue').each(function() {     
             sum += parseInt($(this).text());                     
     }); 
     //change value of total
