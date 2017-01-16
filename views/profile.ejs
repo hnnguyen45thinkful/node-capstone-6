@@ -35,7 +35,7 @@
               <td><%=expenses[i].payee%></td>
               <td><%=expenses[i].pay_period%></td>
               <td><%=expenses[i].date_of_month%></td>
-              <td class='payPeriodValue'><%=expenses[i].monthly%></td>
+              <td class='payPeriodValue1'><%=expenses[i].monthly%></td>
               <td><a href="#" data-id="<%=expenses[i]._id%>" class="deleteExpenseLink">DELETE</a>
               <td><a href="/expenses/<%=expenses[i]._id%>" class="updateExpenseLink">EDIT/UPDATE</a>
             </tr>
@@ -77,7 +77,7 @@
               <td><%=incomes[i].company_title%></td>
               <td><%=incomes[i].hours_work%></td>
               <td><%=incomes[i].pay_period%></td>
-              <td><%=incomes[i].yearly%></td>
+              <td class ="payPeriodValue2"><%=incomes[i].yearly%></td>
               <td><a href ="#" data-id="<%=incomes[i]._id%>" class="deleteIncomeLink">DELETE</a>
               <td><a href="/incomes/<%=incomes[i]._id%>" class="updateIncomeLink">EDIT/UPDATE</a>
             </tr>
@@ -98,12 +98,12 @@
         </tfoot>
         <tfoot>
           <tr>
-            <th scope="row">After Tax
+            <th scope="row">Total Income
               <td>X</td>
               <td>X</td>
               <td>X</td>
               <td>X</td>
-              <td id="totalIncomeAfterTax"></td>
+              <td id= "totalIncomeYearly"></td>
               <td>X</td>
               <td>X</td>
             </th>
@@ -111,13 +111,12 @@
         </tfoot>
         <tfoot>
           <tr>
-            <th scope="row">Total Income
-              <label id="grandTotalAdd"/>
+            <th scope="row">After Tax
               <td>X</td>
               <td>X</td>
               <td>X</td>
               <td>X</td>
-              <td id= "totalIncomeYearly"></td>
+              <td id="totalIncomeAfterTax"></td>
               <td>X</td>
               <td>X</td>
             </th>

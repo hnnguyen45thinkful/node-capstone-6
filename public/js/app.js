@@ -1,8 +1,8 @@
 
-function colSum() {
+function colSumExpense() {
     var sum = 0;
     //iterate through each input and add to sum
-    $('.payPeriodValue').each(function() {     
+    $('.payPeriodValue1').each(function() {     
             sum += parseInt($(this).text());                     
     }); 
     //change value of total
@@ -10,9 +10,27 @@ function colSum() {
 }
 
 
+function colSumIncome() {
+    var sum = 0;
+    //iterate through each input and add to sum
+    $('.payPeriodValue2').each(function() {     
+            sum += parseInt($(this).text());                     
+    }); 
+    //change value of total
+    $('#totalIncomeYearly').html('$' + sum);
+    var tax = 0.30*sum;
+    $('#totalIncomeAfterTax').html('$' + tax);
+}
+
+function finalCurrentBalance(){
+	var balanceFinal= colSumIncome() - colSumExpense(); 
+	$('#totalBalance').html('$' + balanceFinal);
+}
 
 $(document).ready(function(){
-	colSum();
+	colSumExpense();
+	colSumIncome();
+	finalCurrentBalance();
 
 	$('.deleteExpenseLink').click(function(event){
 		event.preventDefault();
