@@ -32,7 +32,7 @@ app.get('/', function(req, res) {
 
 app.get('/income', isLoggedIn, function(req, res){
     // Income.create
-    res.render('income.ejs',{user:req.user});
+    res.render('income.ejs',{user:req.user,income: {}});
 });
 
 app.get('/expense', isLoggedIn, function(req, res){
