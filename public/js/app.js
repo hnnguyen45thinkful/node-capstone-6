@@ -1,12 +1,18 @@
-
 function colSumExpense() {
     var sum = 0;
     //iterate through each input and add to sum
-    $('.payPeriodValue1').each(function() {     
+    $('.payPeriodValue1').each(function() { 
             sum += parseInt($(this).text());                     
+    // if( $('.payPeriodSelect').val() == 'Weekly')    
+    // 	return sum*52;
+    // else if( $('.payPeriodSelect').val() == 'Monthly')
+    //    return sum*12;
+    // else if( $('.payPeriodSelect').val() == 'Yearly')  
+    // 	return sum*1;
     }); 
     //change value of total
     $('#totalFeeMonthly').html('$' + sum);
+    return sum;
 }
 
 
@@ -18,13 +24,17 @@ function colSumIncome() {
     }); 
     //change value of total
     $('#totalIncomeYearly').html('$' + sum);
-    var tax = 0.30*sum;
+    var tax = 0.70*sum;
     $('#totalIncomeAfterTax').html('$' + tax);
+    return tax;
 }
 
+
 function finalCurrentBalance(){
-	var balanceFinal= colSumIncome() - colSumExpense(); 
-	$('#totalBalance').html('$' + balanceFinal);
+	var incomeStart = colSumIncome();
+	var expenseStart = colSumExpense();
+	var balanceFinal = incomeStart - expenseStart;
+		$('#totalBalance').html('$' + balanceFinal);
 }
 
 $(document).ready(function(){
@@ -44,6 +54,7 @@ $(document).ready(function(){
 			},
 			success: function(data){
 				tr.remove();
+				finalCurrentBalance();
 			}
 		});
 	});
@@ -60,6 +71,7 @@ $(document).ready(function(){
 			},
 			success: function(data){
 				tr.remove();
+				finalCurrentBalance();
 			}
 		});
 	});
