@@ -29,11 +29,12 @@
         <input class="field-long" type="text" name="payee" placeholder="Hugh" value="<%= (expense.payee) ? expense.payee : '' %>"/>
       </li>
       <li id="payPeriod">
-        <label>Fee Period</label>
+        <label>Payment Period Type</label>
         <select class="payPeriodSelect field-select" name="pay_period">
           <option value="Monthly" <%= (expense.pay_period && expense.pay_period=='Monthly') ? 'selected' : '' %>>Monthly</option>
           <option value="Yearly" <%= (expense.pay_period && expense.pay_period=='Yearly') ? 'selected' : '' %>>Yearly</option>
           <option value="Weekly" <%= (expense.pay_period && expense.pay_period=='Weekly') ? 'selected' : '' %>>Weekly</option>
+          <option value="Hourly" <%= (expense.pay_period && expense.pay_period=='Hourly') ? 'selected' : '' %>>Hourly</option>
         </select>
       </li>
       <li id="dayOfMonthLi">
@@ -41,8 +42,8 @@
         <input class="dayOfMonth field-short" id="field5" type="text" name="date_of_month" placeholder="15" value="<%= (expense.date_of_month) ? expense.date_of_month : '' %>"/>
       </li>
       <li>
-        <label> <span class="salaryTerm">Monthly </span>Fee<span class="required">*</span></label>
-        <input class="salary field-short" id="field1" type="text" name="monthly" placeholder="350" value="<%= (expense.monthly) ? expense.monthly : '' %>"/>
+        <label> <span class="salaryTerm">Amount</span>Fee<span class="required">*</span></label>
+        <input class="salary field-short" id="field1" type="text" name="monthly" placeholder="350" value="<%= (expense.monthly) ? expense.monthly*12 : '' %>"/>
       </li>
       <li>
         <input type="submit" id="submit" value="Submit"/>

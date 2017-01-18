@@ -1,18 +1,44 @@
 function colSumExpense() {
     var sum = 0;
     //iterate through each input and add to sum
-    $('.payPeriodValue1').each(function() { 
-            sum += parseInt($(this).text());                     
-    // if( $('.payPeriodSelect').val() == 'Weekly')    
-    // 	return sum*52;
-    // else if( $('.payPeriodSelect').val() == 'Monthly')
-    //    return sum*12;
-    // else if( $('.payPeriodSelect').val() == 'Yearly')  
-    // 	return sum*1;
-    }); 
+    $('.payPeriodValue1').each(function() {     
+            sum += parseInt($(this).text());
+         });
+    console.log(sum); 
     //change value of total
+    //$("#yourdropdownid option:selected").text();
+    //$("select[id=yourDropdownid] option:selected").text()
+    // var colChoice = $('.payPeriodSelect field-select').val('');
+
+    $(".payPeriodSelect").change(function(){
+    //console.log($(this).val());    
+    var colChoice = $(this).val(); 
+    console.log(colChoice);
+    if( colChoice == 'Weekly') {   
+               sum = sum*52;
+            }
+            else if( colChoice == 'Monthly'){
+                sum= sum*12;
+            }
+            else if( colChoice == 'Yearly'){ 
+                sum=sum*1;
+			}
+			else if( colChoice == 'Hourly'){  
+            	sum=sum*8;
+            }
+            else {
+            	sum;
+            }
+    });
+    //console.log(sum);
+    //var sum1 = $('td#current1').text();
+    //console.log(sum1);
+    
+    
+// console.log(newsum);
+                    
     $('#totalFeeMonthly').html('$' + sum);
-    return sum;
+        return sum;
 }
 
 
@@ -105,3 +131,6 @@ $(document).ready(function(){
 // });
 
 });
+
+//if statement on expense.ejs examples payperiod
+//sum modify.
