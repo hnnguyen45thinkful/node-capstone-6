@@ -1,6 +1,14 @@
 {
   "name": "node-authentication",
+  "version": "1.0.0",
+  "description": "A budget app to help keep track of all your money.",
   "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "author": "Hieu Nguyen",
+  "license": "ISC",
   "dependencies" : {
     "express": "latest",
     "express-ejs-layouts": "latest",
