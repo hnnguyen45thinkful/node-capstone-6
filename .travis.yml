@@ -8,3 +8,10 @@ addons:
     - mongodb-3.2-precise
     packages:
     - mongodb-org-server
+deploy:
+  provider: heroku
+  api_key:
+    secure: D9cjJPbMmQW5jIIBla+2ZWMg2pwf1K4eor5W9H1W1r4I/f3iaMQjUzbFM9/q+TEvtPRwHKUqLrHLKCEfZux/WZkYwbBri0qHZuDOUTQnRZk8TFkGWevkoM9zhE6g6jjsmuKrpdqubO13ceMJPVnNKC5aprnrVoTJshRxnJzMKWX768T/mPmU//8/2kEQgGb19u/aclWnNXQ13crx32SbkyPgOuAWlihSk4Ap4V4ocLAo7oRGmhlDNpoQ9Z6q5YP1oh/aIFh4z7OC8Wqg560o6PvFYgCPvq4qJ2mPSX+8R+4lU5+IYDY7AvoQ+9BPSbikW9Z0V/TWTbnfkwBMPF9zNzgQQwtRegrmbndVmIL8+Y+OEjV4RqqrHtlzgBvhe2nwv3Pc8szyzQZFbwQzOx65jF0FfTxOfwk9P5cWWPyYNKbsC3bgJlKgn1/Z0JXcWATj8XzWjDddRmHvID61pawb9qTcHyIeMUaJQ/TMLi3AwJqlM7L72D5cOd99lDzKVndQvpcSZ8UI/Wx985LQpn+mwSlwJrP47RlRlnMTtpgGKTOze2y028QWFEfEUAFOh0xYkokguXGUaXhRLu2N3m8dnCglO8JQjq3x3mQD/vr+DC/msb3cSHb3CWgXHrOdliWChM0L+/Y1ih/6ch0FIDq2D0Gk9VOSEg5XpVcun3bJXyM=
+  app: node-capstone-6
+  on:
+    repo: hnnguyen45thinkful/node-capstone-6
