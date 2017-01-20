@@ -35,7 +35,15 @@
               <td><%=expenses[i].payee%></td>
               <td class = "payPeriod"><%=expenses[i].pay_period%></td>
               <td><%=expenses[i].date_of_month%></td>
-              <td class = 'payPeriodValue1'><%=expenses[i].monthly%></td>
+              <td class = 'payPeriodValue1'>
+              <% if (expenses[i].pay_period === "Monthly") { %>
+                    <%=expenses[i].monthly*12%>
+              <% } else if (expenses[i].pay_period === "Yearly") { %>
+                    <%=expenses[i].monthly%>
+              <% } else if (expenses[i].pay_period === "Weekly") { %>
+                    <%=expenses[i].monthly*52%>     
+              <% } else { %>
+              <% } %></td>
               <td><a href="#" data-id="<%=expenses[i]._id%>" class="deleteExpenseLink">DELETE</a>
               <td><a href="/expenses/<%=expenses[i]._id%>" class="updateExpenseLink">EDIT/UPDATE</a>
             </tr>
@@ -77,7 +85,17 @@
               <td><%=incomes[i].company_title%></td>
               <td><%=incomes[i].hours_work%></td>
               <td><%=incomes[i].pay_period%></td>
-              <td class = "payPeriodValue2"><%=incomes[i].yearly%></td>
+              <td class = "payPeriodValue2">
+              <% if (incomes[i].pay_period === "Monthly") { %>
+                    <%=incomes[i].yearly*12%>
+              <% } else if (incomes[i].pay_period === "Yearly") { %>
+                    <%=incomes[i].yearly%>
+              <% } else if (incomes[i].pay_period === "Weekly") { %>
+                    <%=incomes[i].yearly*52%>
+              <% } else if (incomes[i].pay_period === "Hourly") { %>
+                    <%=incomes[i].yearly*8%>           
+              <% } else { %>
+              <% } %></td>
               <td><a href ="#" data-id="<%=incomes[i]._id%>" class="deleteIncomeLink">DELETE</a>
               <td><a href="/incomes/<%=incomes[i]._id%>" class="updateIncomeLink">EDIT/UPDATE</a>
             </tr>
